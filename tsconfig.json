@@ -1,5 +1,5 @@
 {
   "extends": "@betahcoding/ts-config/base.json",
-  "include": ["apps", "packages"],
+  "include": ["apps", "packages", "lint-staged.config.mjs"],
   "exclude": ["turbo"]
 }

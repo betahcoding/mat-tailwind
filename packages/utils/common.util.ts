@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from 'fs';
 
 const getDirectories = (dirPath: string, excludes: string[] = []) => {
   return fs
