@@ -1,21 +1,21 @@
 {
-  "name": "@betahcoding/tailwind-monorepo",
+  "name": "@betahcoding/mat-tailwind-monorepo",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
+    "lint": "tsc --noEmit && turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "generate:component": "turbo gen react-component"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@betahcoding/eslint-config": "workspace:*",
+    "@betahcoding/ts-config": "workspace:*",
     "@turbo/gen": "^1.12.4",
     "prettier": "^3.2.5",
     "turbo": "latest"
   },
-  "packageManager": "pnpm@8.9.0",
+  "packageManager": "pnpm@9.1.0",
   "engines": {
     "node": ">=18"
   }

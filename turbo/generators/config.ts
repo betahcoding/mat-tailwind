@@ -53,7 +53,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
   function getNestedRouteActions(data: InquirerDataType) {
     const { name } = data;
 
-    const root = "packages/ui/src/";
+    const root = "packages/mat-tailwind/src/";
     const nestedRouteActions: PlopTypes.ActionType[] = [];
   
     /** Return early if no nested routes */

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Card } from "@repo/ui/card";
-import { Code } from "@repo/ui/code";
+import { Card } from "@betahcoding/mat-tailwind/card";
+import { Code } from "@betahcoding/mat-tailwind/code";
 import styles from "./page.module.css";
-import { Button } from "@repo/ui/button";
+import { Button } from "@betahcoding/mat-tailwind/button";
 
 function Gradient({
   conic,
