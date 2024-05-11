@@ -8,7 +8,7 @@ describe('{{ kebabCase name }}', () => {
   });
 
   it('should renders with children.', () => {
-    render(<Accordion>children</Accordion>);
+    render(<{{ pascalCase name}}>children<{{ pascalCase name }}/>);
     const childrenElement = screen.getByText('children');
     expect(childrenElement).toBeInTheDocument();
   });

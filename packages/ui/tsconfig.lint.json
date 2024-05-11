@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src", "*.mjs"],
+  "include": ["src", "*.mjs", "jest.config.js"],
   "exclude": ["node_modules", "dist"]
 }

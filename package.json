@@ -6,14 +6,17 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "tsc --noEmit && turbo lint",
+    "test": "turbo test",
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx,html,json}\"",
     "generate:component": "turbo gen react-component",
     "prepare": "husky"
   },
   "devDependencies": {
     "@betahcoding/eslint-config": "workspace:*",
+    "@betahcoding/jest-config": "workspace:*",
     "@betahcoding/ts-config": "workspace:*",
     "@betahcoding/utils": "workspace:*",
+    "@testing-library/jest-dom": "^6.4.5",
     "@turbo/gen": "^1.12.4",
     "@types/node": "^20.12.10",
     "husky": "^9.0.11",
