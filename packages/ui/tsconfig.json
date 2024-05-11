@@ -1,5 +1,5 @@
 {
-  "extends": "@betahcoding/ts-config/react-library.json",
+  "extends": "@betahcoding/ts-config/base.json",
   "compilerOptions": {
     "outDir": "dist"
   },
