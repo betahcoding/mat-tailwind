@@ -1,6 +1,7 @@
 {
   "name": "@betahcoding/mat-tailwind-monorepo",
   "private": true,
+  "author": "Ronald Sutantio",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
