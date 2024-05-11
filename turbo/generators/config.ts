@@ -49,7 +49,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
       {
         type: 'add',
         path: `${root}{{kebabCase name}}/index.ts`,
-        template: `export * from "./{{kebabCase name}}";\n`,
+        template: `export * from './{{kebabCase name}}';\n`,
       },
       {
         type: 'add',
@@ -66,12 +66,12 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
             type: 'append',
             path: `${root}index.ts`,
             pattern: /[;]/,
-            template: 'export * from "./{{kebabCase name}}";',
+            template: `export * from './{{kebabCase name}}';`,
           }
         : {
             type: 'add',
             path: `${root}index.ts`,
-            template: `export * from "./{{kebabCase name}}";\n`,
+            template: `export * from './{{kebabCase name}}';\n`,
           },
     ]);
   }
@@ -109,7 +109,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     const root = rootSegments.join('/');
 
     if (!fs.existsSync(indexFilePath)) {
-      const content = `${'"use client";\n'}// ${currentDirSegments.join('/')} component exports\n`;
+      const content = `${"'use client';\n"}// ${currentDirSegments.join('/')} component exports\n`;
 
       nestedRouteActions.push({
         type: 'add',
@@ -122,7 +122,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         type: 'append',
         pattern: /[;]/,
         path: `${root + (length === 1 ? '' : `${currentDirSegments.slice(0, length - 1).join('/')}/`)}index.ts`,
-        template: `export * from "./${currentDirSegments[length - 1]}"`,
+        template: `export * from './${currentDirSegments[length - 1]}'`,
       });
     }
   }

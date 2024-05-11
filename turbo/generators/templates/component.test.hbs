@@ -1,12 +1,20 @@
-import { cleanup, render, screen } from '@testing-library/react';
-import { afterEach, describe, test } from 'vitest';
+import { render, screen } from '@testing-library/react';
+
 import { {{ pascalCase name }} } from './{{ kebabCase name }}';
 
-describe.concurrent('{{ kebabCase name }}', () => {
-	afterEach(cleanup);
+describe('{{ kebabCase name }}', () => {
+  it('should renders with no errors.', () => {
+    render(<{{ pascalCase name }} />);
+  });
 
-	test('check if h1 heading exists', ({ expect }) => {
-		render(<{{ pascalCase name }} />);
-		expect(screen.getByTestId('{{ kebabCase name }}-h1').textContent).toBe('{{ name }}');
-	});
+  it('should renders with children.', () => {
+    render(<Accordion>children</Accordion>);
+    const childrenElement = screen.getByText('children');
+    expect(childrenElement).toBeInTheDocument();
+  });
+
+  it('should matches with snapshot.', () => {
+    const { container } = render(<{{ pascalCase name }} />);
+    expect(container).toMatchSnapshot();
+  });
 });

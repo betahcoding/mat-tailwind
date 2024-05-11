@@ -9,11 +9,11 @@ interface {{ pascalCase name }}Props {
 const {{ pascalCase name }} = (props: {{ pascalCase name }}Props) => {
   return (
     <div>
-      <h1>{{ pascalCase name }} Component</h1>
+      <h2>generated component {{ pascalCase name }} using template</h2>
       {props.children}
     </div>
   );
 };
 
-export default {{ pascalCase name }}
-export { {{ pascalCase name }}, type {{ pascalCase name}}Props }
+export default {{ pascalCase name }};
+export { {{ pascalCase name }}, type {{ pascalCase name}}Props };
