@@ -44,7 +44,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
   });
 
   function getActions(data: InquirerDataType) {
-    const { nestedRouteActions, root } = getNestedRouteActions(data);
+    const { nestedRouteActions, root, rootStories } = getNestedRouteActions(data);
     return nestedRouteActions.concat([
       {
         type: 'add',
@@ -60,6 +60,11 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         type: 'add',
         path: `${root}{{kebabCase name}}/{{kebabCase name}}.test.tsx`,
         templateFile: 'templates/component.test.hbs',
+      },
+      {
+        type: 'add',
+        path: `${rootStories}{{kebabCase name}}/{{kebabCase name}}.stories.ts`,
+        templateFile: 'templates/component.stories.hbs',
       },
       fs.existsSync(`${root}index.ts`)
         ? {
@@ -84,8 +89,9 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     const root = `${workspaceName}/${specificDir}`;
     const nestedRouteActions: PlopTypes.ActionType[] = [];
 
+    const rootStories = 'apps/storybook/src/stories/';
     /** Return early if no nested routes */
-    if (!name.includes('/')) return { nestedRouteActions, root };
+    if (!name.includes('/')) return { nestedRouteActions, root, rootStories };
 
     const lastSlashInd = name.lastIndexOf('/') || name.lastIndexOf('\\');
     /** following is required to make sure appropreate name is used while creating components */
@@ -97,7 +103,11 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
     for (let i = 1; i <= directories.length; i++)
       updateIndexFilesIfNeeded(nestedRouteActions, rootSegments, directories.slice(0, i));
 
-    return { nestedRouteActions, root: `${root + directories.join('/')}/` };
+    return {
+      nestedRouteActions,
+      root: `${root + directories.join('/')}/`,
+      rootStories: `${rootStories + directories.join('/')}/`,
+    };
   }
 
   function updateIndexFilesIfNeeded(

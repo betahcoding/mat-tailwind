@@ -2,9 +2,23 @@
   "name": "@betahcoding/mat-tailwind-monorepo",
   "private": true,
   "author": "Ronald Sutantio",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js"
+    },
+    "./*": {
+      "types": "./dist/*/index.d.ts",
+      "default": "./dist/*/index.cjs.js",
+      "import": "./dist/*/index.esm.js"
+    }
+  },
   "scripts": {
     "build": "turbo build",
+    "build:ui": "turbo run build --filter=@betahcoding/mat-tailwind",
     "dev": "turbo dev",
+    "sb:dev": "turbo storybook",
     "lint": "tsc --noEmit && turbo lint",
     "test": "turbo test",
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx,html,json}\"",
