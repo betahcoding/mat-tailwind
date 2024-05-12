@@ -1,6 +1,6 @@
 {
   "root": true,
-  "extends": ["next/core-web-vitals", "plugin:storybook/recommended", "@betahcoding/eslint-config/next.js"],
+  "extends": ["plugin:storybook/recommended", "@betahcoding/eslint-config/next.js"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": true

@@ -14,6 +14,9 @@ importers:
       '@betahcoding/jest-config':
         specifier: workspace:*
         version: link:packages/jest-config
+      '@betahcoding/tailwind-config':
+        specifier: workspace:*
+        version: link:packages/tailwind-config
       '@betahcoding/ts-config':
         specifier: workspace:*
         version: link:packages/ts-config
@@ -27,22 +30,31 @@ importers:
         specifier: ^1.12.4
         version: 1.13.3(@types/node@20.12.11)(typescript@5.4.5)
       '@types/node':
-        specifier: ^20.12.10
+        specifier: ^20.12.11
         version: 20.12.11
+      autoprefixer:
+        specifier: ^10.4.19
+        version: 10.4.19(postcss@8.4.38)
       husky:
         specifier: ^9.0.11
         version: 9.0.11
       lint-staged:
         specifier: ^15.2.2
         version: 15.2.2
+      postcss:
+        specifier: ^8.4.38
+        version: 8.4.38
       prettier:
         specifier: ^3.2.5
         version: 3.2.5
+      tailwindcss:
+        specifier: ^3.4.3
+        version: 3.4.3(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5))
       turbo:
         specifier: ^1.13.3
         version: 1.13.3
       typescript:
-        specifier: ^5.3.3
+        specifier: ^5.4.5
         version: 5.4.5
 
   apps/docs:
@@ -100,6 +112,52 @@ importers:
         specifier: ^8.57.0
         version: 8.57.0
 
+  apps/nextjs:
+    dependencies:
+      '@betahcoding/mat-tailwind':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      next:
+        specifier: ^14.2.3
+        version: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.3.1
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@next/eslint-plugin-next':
+        specifier: ^14.1.1
+        version: 14.2.3
+      '@testing-library/jest-dom':
+        specifier: ^6.4.5
+        version: 6.4.5(@jest/globals@29.7.0)(@types/jest@29.5.12)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))
+      '@testing-library/react':
+        specifier: ^15.0.7
+        version: 15.0.7(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@testing-library/user-event':
+        specifier: ^14.5.2
+        version: 14.5.2(@testing-library/dom@10.1.0)
+      '@types/eslint':
+        specifier: ^8.56.5
+        version: 8.56.10
+      '@types/jest':
+        specifier: ^29.5.12
+        version: 29.5.12
+      '@types/node':
+        specifier: ^20.11.24
+        version: 20.12.11
+      '@types/react':
+        specifier: ^18.3.2
+        version: 18.3.2
+      '@types/react-dom':
+        specifier: ^18.3.0
+        version: 18.3.0
+      eslint:
+        specifier: ^8.57.0
+        version: 8.57.0
+
   apps/storybook:
     dependencies:
       '@betahcoding/mat-tailwind':
@@ -115,15 +173,6 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@betahcoding/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@betahcoding/jest-config':
-        specifier: workspace:*
-        version: link:../../packages/jest-config
-      '@betahcoding/ts-config':
-        specifier: workspace:*
-        version: link:../../packages/ts-config
       '@chromatic-com/storybook':
         specifier: ^1.3.5
         version: 1.3.5(react@18.3.1)
@@ -181,70 +230,9 @@ importers:
       eslint-plugin-storybook:
         specifier: ^0.8.0
         version: 0.8.0(eslint@8.57.0)(typescript@5.4.5)
-      postcss:
-        specifier: ^8
-        version: 8.4.38
       storybook:
         specifier: ^8.0.10
         version: 8.0.10(@babel/preset-env@7.24.5(@babel/core@7.24.5))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      tailwindcss:
-        specifier: ^3.4.1
-        version: 3.4.3(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5))
-
-  apps/web:
-    dependencies:
-      '@betahcoding/mat-tailwind':
-        specifier: workspace:*
-        version: link:../../packages/ui
-      next:
-        specifier: ^14.2.3
-        version: 14.2.3(@babel/core@7.24.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      react:
-        specifier: ^18.3.1
-        version: 18.3.1
-      react-dom:
-        specifier: ^18.3.1
-        version: 18.3.1(react@18.3.1)
-    devDependencies:
-      '@betahcoding/eslint-config':
-        specifier: workspace:*
-        version: link:../../packages/eslint-config
-      '@betahcoding/jest-config':
-        specifier: workspace:*
-        version: link:../../packages/jest-config
-      '@betahcoding/ts-config':
-        specifier: workspace:*
-        version: link:../../packages/ts-config
-      '@next/eslint-plugin-next':
-        specifier: ^14.1.1
-        version: 14.2.3
-      '@testing-library/jest-dom':
-        specifier: ^6.4.5
-        version: 6.4.5(@jest/globals@29.7.0)(@types/jest@29.5.12)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))
-      '@testing-library/react':
-        specifier: ^15.0.7
-        version: 15.0.7(@types/react@18.3.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@testing-library/user-event':
-        specifier: ^14.5.2
-        version: 14.5.2(@testing-library/dom@10.1.0)
-      '@types/eslint':
-        specifier: ^8.56.5
-        version: 8.56.10
-      '@types/jest':
-        specifier: ^29.5.12
-        version: 29.5.12
-      '@types/node':
-        specifier: ^20.11.24
-        version: 20.12.11
-      '@types/react':
-        specifier: ^18.3.2
-        version: 18.3.2
-      '@types/react-dom':
-        specifier: ^18.3.0
-        version: 18.3.0
-      eslint:
-        specifier: ^8.57.0
-        version: 8.57.0
 
   packages/eslint-config:
     devDependencies:
@@ -256,7 +244,7 @@ importers:
         version: 7.8.0(eslint@8.57.0)(typescript@5.4.5)
       '@vercel/style-guide':
         specifier: ^5.2.0
-        version: 5.2.0(@next/eslint-plugin-next@14.2.3)(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11))(prettier@3.2.5)(typescript@5.4.5)
+        version: 5.2.0(@next/eslint-plugin-next@14.2.3)(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))(prettier@3.2.5)(typescript@5.4.5)
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
@@ -321,6 +309,8 @@ importers:
         specifier: ^29.7.0
         version: 29.7.0
 
+  packages/tailwind-config: {}
+
   packages/ts-config: {}
 
   packages/ui:
@@ -332,15 +322,6 @@ importers:
         specifier: '> 18.0.0'
         version: 18.3.1(react@18.3.1)
     devDependencies:
-      '@betahcoding/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@betahcoding/jest-config':
-        specifier: workspace:*
-        version: link:../jest-config
-      '@betahcoding/ts-config':
-        specifier: workspace:*
-        version: link:../ts-config
       '@testing-library/jest-dom':
         specifier: ^6.4.5
         version: 6.4.5(@jest/globals@29.7.0)(@types/jest@29.5.12)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))
@@ -2802,6 +2783,13 @@ packages:
     engines: {node: '>= 4.5.0'}
     hasBin: true
 
+  autoprefixer@10.4.19:
+    resolution: {integrity: sha512-BaENR2+zBZ8xXhM4pUaKUxlVdxZ0EZhjvbopwnXmxRUfqDmwSpC2lAi/QXvx7NRdPCo1WKEcEF6mV64si1z4Ew==}
+    engines: {node: ^10 || ^12 || >=14}
+    hasBin: true
+    peerDependencies:
+      postcss: ^8.1.0
+
   available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
@@ -4249,6 +4237,9 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
 
+  fraction.js@4.3.7:
+    resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
+
   fragment-cache@0.2.1:
     resolution: {integrity: sha512-GMBAbW9antB8iZRHLoGw0b3HANt57diZYFO/HL1JGIC1MjKrdmhxvrJbupnVvpys0zsz7yBApXdQyfepKly2kA==}
     engines: {node: '>=0.10.0'}
@@ -5637,6 +5628,10 @@ packages:
 
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
+    engines: {node: '>=0.10.0'}
+
+  normalize-range@0.1.2:
+    resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
 
   npm-run-path@2.0.2:
@@ -10330,7 +10325,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vercel/style-guide@5.2.0(@next/eslint-plugin-next@14.2.3)(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11))(prettier@3.2.5)(typescript@5.4.5)':
+  '@vercel/style-guide@5.2.0(@next/eslint-plugin-next@14.2.3)(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))(prettier@3.2.5)(typescript@5.4.5)':
     dependencies:
       '@babel/core': 7.24.5
       '@babel/eslint-parser': 7.24.5(@babel/core@7.24.5)(eslint@8.57.0)
@@ -10342,9 +10337,9 @@ snapshots:
       eslint-import-resolver-typescript: 3.6.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-import@2.29.1)(eslint@8.57.0)
       eslint-plugin-eslint-comments: 3.2.0(eslint@8.57.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint-import-resolver-typescript@3.6.1)(eslint@8.57.0)
-      eslint-plugin-jest: 27.9.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11))(typescript@5.4.5)
+      eslint-plugin-jest: 27.9.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))(typescript@5.4.5)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
-      eslint-plugin-playwright: 0.16.0(eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11))(typescript@5.4.5))(eslint@8.57.0)
+      eslint-plugin-playwright: 0.16.0(eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))(typescript@5.4.5))(eslint@8.57.0)
       eslint-plugin-react: 7.34.1(eslint@8.57.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.57.0)
       eslint-plugin-testing-library: 6.2.2(eslint@8.57.0)(typescript@5.4.5)
@@ -10747,6 +10742,16 @@ snapshots:
   asynckit@0.4.0: {}
 
   atob@2.1.2: {}
+
+  autoprefixer@10.4.19(postcss@8.4.38):
+    dependencies:
+      browserslist: 4.23.0
+      caniuse-lite: 1.0.30001617
+      fraction.js: 4.3.7
+      normalize-range: 0.1.2
+      picocolors: 1.0.0
+      postcss: 8.4.38
+      postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
     dependencies:
@@ -12249,7 +12254,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11))(typescript@5.4.5):
+  eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))(typescript@5.4.5):
     dependencies:
       '@typescript-eslint/utils': 5.62.0(eslint@8.57.0)(typescript@5.4.5)
       eslint: 8.57.0
@@ -12282,11 +12287,11 @@ snapshots:
 
   eslint-plugin-only-warn@1.1.0: {}
 
-  eslint-plugin-playwright@0.16.0(eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11))(typescript@5.4.5))(eslint@8.57.0):
+  eslint-plugin-playwright@0.16.0(eslint-plugin-jest@27.9.0(@typescript-eslint/eslint-plugin@6.21.0(@typescript-eslint/parser@6.21.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))(typescript@5.4.5))(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
     optionalDependencies:
-      eslint-plugin-jest: 27.9.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11))(typescript@5.4.5)
+      eslint-plugin-jest: 27.9.0(@typescript-eslint/eslint-plugin@7.8.0(@typescript-eslint/parser@7.8.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)(jest@29.7.0(@types/node@20.12.11)(ts-node@10.9.2(@types/node@20.12.11)(typescript@5.4.5)))(typescript@5.4.5)
 
   eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.2.5):
     dependencies:
@@ -12765,6 +12770,8 @@ snapshots:
       mime-types: 2.1.35
 
   forwarded@0.2.0: {}
+
+  fraction.js@4.3.7: {}
 
   fragment-cache@0.2.1:
     dependencies:
@@ -14470,6 +14477,8 @@ snapshots:
       remove-trailing-separator: 1.1.0
 
   normalize-path@3.0.0: {}
+
+  normalize-range@0.1.2: {}
 
   npm-run-path@2.0.2:
     dependencies:

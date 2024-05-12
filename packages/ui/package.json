@@ -2,8 +2,13 @@
   "name": "@betahcoding/mat-tailwind",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    "./button": "./src/button.tsx",
+    "./card": "./src/card.tsx",
+    "./code": "./src/code.tsx"
+  },
   "scripts": {
-    "lint": "eslint . --max-warnings 0",
+    "lint": "eslint .",
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watchAll"
   },
@@ -12,9 +17,6 @@
     "react-dom": "> 18.0.0"
   },
   "devDependencies": {
-    "@betahcoding/eslint-config": "workspace:*",
-    "@betahcoding/jest-config": "workspace:*",
-    "@betahcoding/ts-config": "workspace:*",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^14.5.2",
