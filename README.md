@@ -1,6 +1,6 @@
 # @betahcoding/mat-tailwind
 
-A React UI component librart built with love and TailwindCSS. Insipired by Google Material Design.
+A React UI component and design system built with love and TailwindCSS. Insipired by Google Material Design.
 
 # Turborepo starter
 
