@@ -6,18 +6,6 @@ const createJestConfig = nextJest({
   dir: './',
 });
 
-// // Add Jest config
-// const jestConfig: Config = {
-//   coverageProvider: 'v8',
-//   testEnvironment: 'jsdom',
-//   setupFilesAfterEnv: ['@betahcoding/jest-config/jest.setup.ts'],
-// };
-
-// // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-// export default createJestConfig(jestConfig);
-
-// Import the Config type from Jest's types to provide type-checking for the config object.
-
 // Define your Jest configuration with a typed object.
 const config: Config.InitialOptions = {
   preset: 'ts-jest', // Use ts-jest preset, which includes TypeScript support and jsdom environment.

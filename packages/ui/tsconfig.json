@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "jest.config.js"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

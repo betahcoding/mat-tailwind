@@ -4,6 +4,7 @@
   "license": "MIT",
   "files": [
     "react.ts",
+    "react.js",
     "next.ts"
   ],
   "devDependencies": {
