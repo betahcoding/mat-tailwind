@@ -5,13 +5,18 @@
   "scripts": {
     "build": "turbo build",
     "build:ui": "turbo run build --filter=@betahcoding/mat-tailwind",
+    "build:docs": "turbo run build --filter=docs",
+    "build:nextjs": "turbo run build --filter=nextjs",
+    "build:sb": "turbo run build --filter=storybook",
     "dev": "turbo dev",
-    "nextjs:dev": "turbo dev --filter=nextjs",
-    "sb:dev": "turbo storybook",
-    "lint": "tsc --noEmit && turbo lint",
+    "dev:docs": "turbo dev --filter=docs",
+    "dev:nextjs": "turbo dev --filter=nextjs",
+    "dev:sb": "turbo storybook",
+    "lint": "turbo lint",
     "test": "turbo test",
     "format": "prettier --write \"**/*.{ts,tsx,md,mdx,html,json}\"",
     "generate:component": "turbo gen react-component",
+    "preinstall": "npx only-allow pnpm",
     "prepare": "husky"
   },
   "devDependencies": {

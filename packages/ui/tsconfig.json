@@ -1,8 +1,8 @@
 {
-  "extends": "@betahcoding/ts-config/reactjs.json",
+  "extends": ["@betahcoding/ts-config/reactjs.json", "./tsconfig.path.json"],
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts", "jest.config.js"],
   "exclude": ["node_modules", "dist"]
 }

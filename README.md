@@ -1,18 +1,6 @@
 # @betahcoding/mat-tailwind
 
-A React UI component and design system built with love and TailwindCSS. Insipired by Google Material Design.
-
-# Turborepo starter
-
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+A React UI component and design system library built with love on top of TailwindCSS. Insipired by Google Material Design.
 
 ## What's inside?
 
@@ -20,10 +8,13 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `nextjs`: another [Next.js](https://nextjs.org/) app
-- `@betahcoding/mat-tailwind`: a stub React component library shared by both `nextjs` and `docs` applications
-- `@betahcoding/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `docs`: a [Next.js](https://nextjs.org/) for documentation app.
+- `nextjs`: a [Next.js](https://nextjs.org/) for demonstrating the usage of app.
+- `storybook`: a [Next.js](https://nextjs.org/) for UI and design system workshop app.
+- `@betahcoding/mat-tailwind`: a stub React component library shared by both `nextjs` and `docs` applications.
+- `@betahcoding/eslint-config`: contains `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`).
+- `@betahcoding/eslint-config`: contains `jest` configurations.
+- `@betahcoding/tailwind-config`: contains `tailwind` configurations.
 - `@betahcoding/ts-config`: `tsconfig.json`s used throughout the monorepo
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
@@ -33,8 +24,10 @@ Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 This Turborepo has some additional tools already setup for you:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- [ESLint](https://eslint.org/) for code linting.
+- [Prettier](https://prettier.io) for code formatting.
+- [Husky](https://typicode.github.io/husky/) for automatic linting commit messages, code, and run tests upon committing or pushing.
+- [Lint-staged](https://github.com/lint-staged/lint-staged) for pre-commit linting.
 
 ### Build
 
@@ -52,25 +45,6 @@ To develop all apps and packages, run the following command:
 ```
 cd my-turborepo
 pnpm dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-npx turbo link
 ```
 
 ## Useful Links

@@ -5,6 +5,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.js", "*.mjs"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.ts", "*.mjs"],
   "exclude": ["node_modules"]
 }
