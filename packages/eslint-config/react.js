@@ -22,7 +22,6 @@ module.exports = {
     'plugin:import/typescript',
     'plugin:import/errors',
     'plugin:import/warnings',
-    'eslint-config-turbo',
     'prettier',
   ],
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'only-warn', 'prettier'],
